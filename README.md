@@ -6,7 +6,7 @@ This repository contains resources to learn **Low-Level Design (LLD) / Object-Or
 
 ## 💻 Low-Level Design Interview Problems
 
-- [Design Tic Tac Toe Game](src/TicTacToe/)
+- [Design Tic Tac Toe Game](src/tic_tac_toe/)
 
 ---
 
@@ -14,7 +14,7 @@ This repository contains resources to learn **Low-Level Design (LLD) / Object-Or
 
 ```sh
 # Clone the repository
-$ git clone https://github.com/your-repo/Low-Level-Design.git
+$ git clone https://github.com/bobypanchal/Low-Level-Design.git
 
 # Navigate to the project directory
 $ cd Low-Level-Design

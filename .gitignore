@@ -1,7 +1,4 @@
 ### Eclipse ###
+bin/
 .classpath
 .project
-.settings
-
-.metadata/
-bin/
