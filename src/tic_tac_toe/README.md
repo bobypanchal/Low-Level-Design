@@ -65,9 +65,6 @@ src/
 
 ## ▶️ How to Run
 ```sh
-# Navigate to the TicTacToe directory
-$ cd Low-Level-Design/src
-
 # Compile the Java files
 $ javac tic_tac_toe/*.java tic_tac_toe/board/*.java tic_tac_toe/game/*.java tic_tac_toe/player/*.java
 
