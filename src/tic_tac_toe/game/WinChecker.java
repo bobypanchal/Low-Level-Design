@@ -11,47 +11,38 @@ public class WinChecker {
 		this.board = board;
 	}
 
-	boolean hasWinner() {
+	public boolean checkWinner(Symbol symbol) {
+		if (symbol == null)
+			return false;
+
 		for (int i = 0; i < board.getSize(); i++) {
-			if (checkRow(i) || checkColumn(i)) {
+			if (checkRow(i, symbol) || checkColumn(i, symbol)) {
 				return true;
 			}
 		}
-		return checkMainDiagonal() || checkAntiDiagonal();
+		return checkMainDiagonal(symbol) || checkAntiDiagonal(symbol);
 	}
 
-	private boolean checkRow(int row) {
-		Symbol symbol = board.getCell(row, 0);
-		if (symbol == null)
-			return false;
-
-		for (int i = 1; i < board.getSize(); i++) {
-			if (board.getCell(row, i) != symbol) {
+	private boolean checkRow(int row, Symbol symbol) {
+		for (int col = 0; col < board.getSize(); col++) {
+			if (board.getCell(row, col) != symbol) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private boolean checkColumn(int col) {
-		Symbol symbol = board.getCell(0, col);
-		if (symbol == null)
-			return false;
-
-		for (int i = 1; i < board.getSize(); i++) {
-			if (board.getCell(i, col) != symbol) {
+	private boolean checkColumn(int col, Symbol symbol) {
+		for (int row = 0; row < board.getSize(); row++) {
+			if (board.getCell(row, col) != symbol) {
 				return false;
 			}
 		}
 		return true;
 	}
 
-	private boolean checkMainDiagonal() {
-		Symbol symbol = board.getCell(0, 0);
-		if (symbol == null)
-			return false;
-
-		for (int i = 1; i < board.getSize(); i++) {
+	private boolean checkMainDiagonal(Symbol symbol) {
+		for (int i = 0; i < board.getSize(); i++) {
 			if (board.getCell(i, i) != symbol) {
 				return false;
 			}
@@ -59,13 +50,9 @@ public class WinChecker {
 		return true;
 	}
 
-	private boolean checkAntiDiagonal() {
+	private boolean checkAntiDiagonal(Symbol symbol) {
 		int size = board.getSize();
-		Symbol symbol = board.getCell(0, size - 1);
-		if (symbol == null)
-			return false;
-
-		for (int i = 1; i < size; i++) {
+		for (int i = 0; i < size; i++) {
 			if (board.getCell(i, size - 1 - i) != symbol) {
 				return false;
 			}

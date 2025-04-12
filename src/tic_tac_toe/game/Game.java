@@ -29,7 +29,7 @@ public class Game {
 			currentPlayer.play(board, scanner);
 			board.print();
 
-			if (winChecker.hasWinner()) {
+			if (winChecker.checkWinner(currentPlayer.getSymbol())) {
 				System.out.println(currentPlayer.getName() + " Wins!");
 				return;
 			}
