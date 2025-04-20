@@ -80,15 +80,15 @@ public class TicTacToe {
 				int choice = scanner.nextInt();
 				scanner.nextLine();
 
-				difficulty = switch (choice) {
-				case 1 -> DifficultyLevel.EASY;
-				case 2 -> DifficultyLevel.MEDIUM;
-				case 3 -> DifficultyLevel.HARD;
-				default -> {
+				if (choice == 1) {
+					difficulty = DifficultyLevel.EASY;
+				} else if (choice == 2) {
+					difficulty = DifficultyLevel.MEDIUM;
+				} else if (choice == 3) {
+					difficulty = DifficultyLevel.HARD;
+				} else {
 					System.out.println("Invalid choice. Please enter 1, 2, or 3.");
-					yield null;
 				}
-				};
 			} while (difficulty == null);
 			players[1] = new BotPlayer("Bot", player1Symbol.getOpposite(), difficulty);
 		}

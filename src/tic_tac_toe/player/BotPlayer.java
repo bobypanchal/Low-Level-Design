@@ -20,11 +20,13 @@ public class BotPlayer extends Player {
 	}
 
 	private static BotStrategy getStrategyByDifficulty(DifficultyLevel difficulty) {
-		return switch (difficulty) {
-		case EASY -> new EasyStrategy();
-		case MEDIUM -> new MediumStrategy();
-		case HARD -> new HardStrategy();
-		};
+		if (difficulty == DifficultyLevel.MEDIUM) {
+			return new MediumStrategy();
+		} else if (difficulty == DifficultyLevel.HARD) {
+			return new HardStrategy();
+		} else {
+			return new EasyStrategy();
+		}
 	}
 
 	@Override
