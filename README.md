@@ -6,6 +6,7 @@ This repository contains resources to learn **Low-Level Design (LLD) / Object-Or
 
 ## 💻 Low-Level Design Interview Problems
 
+- [Design Parking Lot System](src/parking_lot/)
 - [Design Tic Tac Toe Game](src/tic_tac_toe/)
 
 ---
